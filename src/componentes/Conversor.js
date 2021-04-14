@@ -14,21 +14,33 @@ export default class Conversor extends Component {
     }
 
     converter(){
+
+        // Variavel que vai conter a moeda a converter
         let de_para = `${this.props.moedaA}_${this.props.moedaB}`;
 
+        // Definicao da URL da api na variavel 
         let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=3fc4e0a04489ffb076cd`
 
+        // Fetch dos dados da API passando a variavel
         fetch(url)
             .then(res=>{
 
+                // Transfor resposta em JSON
                 const jsonCotacao = res.json()
+
+                // Retorna a variavel ja em Json
             return jsonCotacao
 
         }).then(jsonCotacao=>{
+            // usar a variavel para pegar o dado da API
+            
+                //variavel com o valor 
+                let cotacao = jsonCotacao[de_para] 
 
-                let cotacao = jsonCotacao[de_para]
-
+                // variavel com o valor da conversao em NUMERO e fixado a 2 casas depois da virgula
                 let moedaB_valor = (parseFloat( this.state.moedaA_valor * cotacao).toFixed(2))
+
+                // Passando o valor para o controle de estado
                 this.setState({moedaB_valor})
             })
     }
