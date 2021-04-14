@@ -1,0 +1,21 @@
+html{
+    background-image: linear-gradient(to right top, #6b8ed1, #7092d5, #7596d9, #7a9add, #7f9ee1, #7b9be6, #7798eb, #7495ef, #6989f4, #627cf8, #5e6efa, #5f5ffb);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100%;
+}
+.container{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.conversor{
+    width: 30%;
+    border: 16px inset #1a87d8;
+    margin: 1%;
+    /* grid-column: span 2; */
+}
+
